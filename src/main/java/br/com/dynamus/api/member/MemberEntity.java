@@ -44,4 +44,6 @@ public class MemberEntity {
 
 	@Embedded
 	private Address address;
+
+	private Boolean active = true;
 }

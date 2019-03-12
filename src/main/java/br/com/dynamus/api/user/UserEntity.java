@@ -15,6 +15,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.Builder.Default;
 
 @Data
 @NoArgsConstructor
@@ -41,4 +42,6 @@ public class UserEntity {
 	@Size(min=1,max=150)
 	@Column(length=150, nullable=false)
 	private String password;
+
+	private Boolean active = true;
 }
