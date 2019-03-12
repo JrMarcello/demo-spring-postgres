@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DynamusApplication",
+            "request": "launch",
+            "mainClass": "br.com.dynamus.api.DynamusApplication",
+            "projectName": "dynamus"
+        }
+    ]
+}
