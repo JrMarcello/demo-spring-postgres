@@ -8,7 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -47,10 +49,22 @@ public class ClassEntity {
 	@Size(min=1,max=150)
 	@Column(length=150)
     private String description;
-    
-    @OneToMany(cascade={CascadeType.ALL})
+
+    @OneToOne(cascade={CascadeType.ALL})
     @JoinColumn(name="member_id")
     private MemberEntity teacher;
 
-    // private List<MemberEntity> students;
+    @OneToMany
+    @JoinTable(
+        name="class_member",
+        joinColumns={@JoinColumn(name="class_id")},
+        inverseJoinColumns={@JoinColumn(name="member_id")}
+    )
+    private List<MemberEntity> students;
+
+    @Column(columnDefinition="Date default now()")
+    private java.sql.Date startDate;
+    private java.sql.Date endDate;
+
+    private Boolean active = true;
 }

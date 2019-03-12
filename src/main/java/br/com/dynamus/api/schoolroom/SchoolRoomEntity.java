@@ -33,4 +33,6 @@ public class SchoolRoomEntity {
 	@Size(min=1,max=150)
 	@Column(length=150)
 	private String description;
+
+	private Boolean active = true;
 }
