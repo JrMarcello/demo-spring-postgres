@@ -1,3 +1,3 @@
-# dynamus-pg
+# demoproject-spring-postgres
 
-Church manager API
+A simple project using Spring and Postgres to demonstrate how its works together
